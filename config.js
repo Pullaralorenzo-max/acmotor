@@ -20,8 +20,8 @@ const ClientConfig = {
     googleMapsSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2545.3778127329592!2d3.966602!3d50.3595092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c24376070f2e0f%3A0xce3f6a4aec040488!2sAC%20MOTOR!5e0!3m2!1sfr!2sbe!4v1780848454565!5m2!1sfr!2sbe",
 
     // --- Gestion des Images ---
-    imgLogo: "image/logo.png",
-    imgHero: "image/garage.png",
+    imgLogo: "image/certificate (1).png",
+    imgHero: "image/facade.png",
     imgAbout: "image/repar.png",
     
     // Voitures d'occasion
