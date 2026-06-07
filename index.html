@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-config="nom">Chargement...</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chargement de la configuration -->
+    <script src="config.js"></script>
+</head>
+<body>
+
+    <!-- En-tête de navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img data-img="imgLogo" alt="Logo Entreprise" class="logo-icon">
+                    <span data-config="nom"></span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#occasion-section">Occasions</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Demander un devis</a></li>
+            </ul>
+            <div class="social-links">
+                <ul>
+                    <li><a href="#" id="nav-phone-link" title="Appeler Directement">
+                        <img src="icons/telephone.png" alt="Téléphone">
+                    </a></li>
+                    <li><a href="https://facebook.com/AcMotor" target="_blank" rel="noopener noreferrer">
+                        <img src="icons/facebook.png" alt="Facebook">
+                    </a></li>
+                    <li><a href="https://twitter.com/AcMotor" target="_blank" rel="noopener noreferrer">
+                        <img src="icons/twitter.png" alt="Twitter">
+                    </a></li>
+                    <li><a href="https://instagram.com/AcMotor" target="_blank" rel="noopener noreferrer">
+                        <img src="icons/instagram.png" alt="Instagram">
+                    </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>
+                    <img src="image/certificate (1).png" alt="Certification" class="hero-cert-icon">
+                    <span data-config="slogan"></span>
+                </h1>
+                <p class="subtitle" data-config="descriptionShort"></p>
+            </div>
+            <div class="hero-image">
+                <img data-img="imgHero" alt="Atelier de réparation automobile professionnel">
+            </div>
+        </section>
+
+        <!-- À propos -->
+        <section id="about">
+            <h2>Pourquoi choisir <span data-config="nom"></span> ?</h2>
+            <p data-config="aboutText"></p>
+            <div class="about-image">
+                <img data-img="imgAbout" alt="Showroom véhicules d'occasion">
+            </div>
+        </section>
+
+        <!-- Section Occasions -->
+        <section id="occasion-section">
+            <h2>Vente de véhicules d'occasion</h2>
+            <p class="section-subtitle">Découvrez notre sélection de voitures soigneusement inspectées.</p>
+
+            <div class="cars-grid">
+                <div class="car-card">
+                    <img data-img="imgCar1" alt="Peugeot 207">
+                    <h3>Peugeot 207</h3>
+                    <p class="car-specs">Essence - 2015 - 50 000 km</p>
+                    <p class="car-price">15 000 €</p>
+                    <button class="cta-button" onclick="ouvrirModale('Peugeot 207')">Réserver un essai</button>
+                </div>
+
+                <div class="car-card">
+                    <img data-img="imgCar2" alt="Renault Clio">
+                    <h3>Renault Clio</h3>
+                    <p class="car-specs">Diesel - 2017 - 30 000 km</p>
+                    <p class="car-price">12 000 €</p>
+                    <button class="cta-button" onclick="ouvrirModale('Renault Clio')">Réserver un essai</button>
+                </div>
+
+                <div class="car-card">
+                    <img data-img="imgCar3" alt="Citroën C3">
+                    <h3>Citroën C3</h3>
+                    <p class="car-specs">Essence - 2018 - 25 000 km</p>
+                    <p class="car-price">14 000 €</p>
+                    <button class="cta-button" onclick="ouvrirModale('Citroën C3')">Réserver un essai</button>
+                </div>
+
+                <div class="car-card">
+                    <img data-img="imgCar4" alt="Ford Fiesta">
+                    <h3>Ford Fiesta</h3>
+                    <p class="car-specs">Diesel - 2016 - 40 000 km</p>
+                    <p class="car-price">13 000 €</p>
+                    <button class="cta-button" onclick="ouvrirModale('Ford Fiesta')">Réserver un essai</button>
+                </div>
+            </div>
+
+            <!-- Modale de réservation d'essai -->
+            <div id="modale" class="modale">
+                <div class="modale-content">
+                    <span class="close" onclick="fermerModale()">×</span>
+                    <h2>Réserver un essai pour <span id="car-name"></span></h2>
+                    <form id="form-modale" action="#" method="post">
+                        <label for="modal-name">Nom :</label>
+                        <input type="text" id="modal-name" name="name" placeholder="Votre nom" required>
+                        
+                        <label for="modal-email">Email :</label>
+                        <input type="email" id="modal-email" name="email" placeholder="votre@email.com" required>
+                        
+                        <label for="modal-phone">Téléphone :</label>
+                        <input type="tel" id="modal-phone" name="phone" placeholder="Votre numéro de téléphone" required>
+                        
+                        <label for="modal-date">Date souhaitée :</label>
+                        <input type="date" id="modal-date" name="date" required>
+                        
+                        <label for="modal-time">Heure souhaitée :</label>
+                        <input type="time" id="modal-time" name="time" required>
+                        
+                        <button type="submit" class="submit-btn">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </section>   
+        
+        <!-- Section Services & Tarifs -->
+        <section class="section-service" id="services">
+            <h2>Nos tarifs & Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img data-img="imgService1" alt="Entretien de base">
+                    <h3>Entretien de base</h3>
+                    <div class="service-badge">Vidange et filtre</div>
+                    <p>Remplacement de l'huile moteur et du filtre à huile pour assurer une performance optimale.</p>
+                    <p class="price">79,99 €</p>
+                </div>
+                    
+                <div class="service-card">
+                    <img data-img="imgService2" alt="Entretien complet">
+                    <h3>Entretien complet</h3>
+                    <div class="service-badge">Vidange, filtres, freins</div>
+                    <p>Entretien complet incluant vidange, remplacement des filtres et vérification des freins pour une sécurité maximale.</p>
+                    <p class="price">149,99 €</p>
+                </div>
+
+                <div class="service-card">
+                    <img data-img="imgService3" alt="Diagnostic électronique">
+                    <h3>Diagnostic électronique</h3>
+                    <div class="service-badge">Analyse des codes d'erreur</div>
+                    <p>Diagnostic complet du système électronique pour identifier et résoudre les problèmes rapidement.</p>
+                    <p class="price">49,99 €</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <section id="contact-section">
+            <h2>Nous rendre visite</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p><strong>Adresse :</strong><br> <span data-config="adresseComplete"></span></p>
+                    <p><strong>Téléphone :</strong><br> <span data-config="telephoneAffichage"></span></p>
+                </div>
+                
+                <div class="map-container">
+                    <iframe id="dynamic-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulaire de Devis -->
+        <section id="contact">
+            <h2>Demandez votre devis</h2>
+            <form id="form-devis" action="#" method="post" class="devis-form">
+                <div class="form-group-half">
+                    <div class="input-box">
+                        <label for="devis-name">Nom :</label>
+                        <input type="text" id="devis-name" name="name" placeholder="Votre nom" required>  
+                    </div>
+                    <div class="input-box">
+                        <label for="firstname">Prénom :</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
+                    </div>
+                </div>
+                
+                <label for="devis-email">Votre email :</label>
+                <input type="email" id="devis-email" name="email" placeholder="votre@email.com" required>
+                
+                <div class="form-group-half">
+                    <div class="input-box">
+                        <label for="vehicule">Véhicule concerné :</label>
+                        <input type="text" id="vehicule" name="vehicule" placeholder="Marque et modèle" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="year">Année du véhicule :</label>
+                        <input type="number" id="year" name="year" placeholder="Année de fabrication" required>
+                    </div>
+                </div>
+                
+                <label for="description">Description du problème :</label>
+                <textarea id="description" name="description" placeholder="Décrivez le problème rencontré" required></textarea>
+                
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+        </section>
+        
+        <div class="footer-bottom">
+            <p>© 2026 <span data-config="nom"></span>. Tous droits réservés.</p>
+            <p>Maquette réalisée par Lorenzo Pullara</p>
+        </div>
+    </footer>
+
+    <!-- Bouton Flottant Calendly -->
+    <a href="#" id="calendly-btn" class="calendly-float-btn" target="_blank" rel="noopener noreferrer" title="Prendre rendez-vous">📅</a>
+
+    <!-- Moteur d'injection mis à jour -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Injection des champs de textes (data-config)
+            document.querySelectorAll('[data-config]').forEach(element => {
+                const key = element.getAttribute('data-config');
+                if (ClientConfig[key]) {
+                    if (element.tagName.toLowerCase() === 'title') {
+                        document.title = `${ClientConfig[key]} | Vente et Réparation Automobile de Confiance`;
+                    } else {
+                        element.innerText = ClientConfig[key];
+                    }
+                }
+            });
+
+            // 2. NEW : Injection automatique des sources d'images (data-img)
+            document.querySelectorAll('[data-img]').forEach(imgElement => {
+                const imgKey = imgElement.getAttribute('data-img');
+                if (ClientConfig[imgKey]) {
+                    imgElement.src = ClientConfig[imgKey];
+                }
+            });
+
+            // 3. Liens fonctionnels & Appel Direct
+            if (document.getElementById('nav-phone-link')) {
+                document.getElementById('nav-phone-link').href = `tel:${ClientConfig.telephoneLien}`;
+            }
+            if (document.getElementById('calendly-btn')) {
+                document.getElementById('calendly-btn').href = ClientConfig.calendlyUrl;
+            }
+
+            // 4. Action des formulaires Formspree
+            if (document.getElementById('form-devis')) {
+                document.getElementById('form-devis').action = ClientConfig.formspreeDevis;
+            }
+            if (document.getElementById('form-modale')) {
+                document.getElementById('form-modale').action = ClientConfig.formspreeModale;
+            }
+
+            // 5. Google Maps URL src
+            if (document.getElementById('dynamic-map')) {
+                document.getElementById('dynamic-map').src = ClientConfig.googleMapsSrc;
+            }
+        });
+
+        // Contrôles Modale
+        function abrirModale(nomVoiture) {
+            document.getElementById("modale").style.display = "flex"; 
+            document.getElementById("car-name").innerText = nomVoiture;
+        }
+
+        function fermerModale() {
+            document.getElementById("modale").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modale")) {
+                fermerModale();
+            }
+        }
+    </script>
+</body>
+</html>
